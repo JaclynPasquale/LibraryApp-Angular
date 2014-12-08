@@ -1,0 +1,36 @@
+body {
+  margin: 0 auto;
+
+}
+#form {
+  float: left;
+  display: inline;
+}
+#library-list {
+  float: right;
+  display: inline;
+}
+
+.book-image {
+  height: 150px;
+  margin: 12px;
+
+}
+
+label {
+  display: block;
+}
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+li {
+  padding: 3px;
+}
+h1 {
+  text-align: center;
+}
+.button {
+  margin-top: 10px;
+}
