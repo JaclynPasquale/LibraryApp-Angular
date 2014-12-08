@@ -1,0 +1,37 @@
+
+<section id="library-list" class="col-md-8">
+<table class="table table-hover" >
+  <tr ng-repeat="(bookId, book) in laCtrl.books">
+    <td>
+      <img class="book-image" ng-src="{{book.image}}"/>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <h4>{{book.title}}</h4>
+        </li>
+        <li>
+          {{book.author}}
+        </li>
+        <li>
+          {{book.price | currency}}
+        </li>
+        <li>
+          <blockquote>
+            "{{book.review}}"
+            <br />
+            - {{book.commenteremail}}
+          </blockquote>
+
+
+        </li>
+        <li>
+          <a class="btn btn-primary" href="/#/{{bookId}}">Show</a>
+          <button ng-click="laCtrl.delete(bookId)">Delete</button>
+        </li>
+      </ul>
+    </td>
+  </tr>
+
+</table>
+</section>

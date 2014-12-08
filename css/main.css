@@ -34,3 +34,7 @@ h1 {
 .button {
   margin-top: 10px;
 }
+
+.btn-primary {
+  margin: 15px;
+}
