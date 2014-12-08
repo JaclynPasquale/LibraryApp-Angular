@@ -6,6 +6,16 @@
       var vm = this;
       // i don't get why we're doing this here
 
+    /*  $http.get('https://library-app-angular.firebaseio.com/list.json')
+      .success(function(data){
+        vm.books = data;
+      })
+      .error(function(err){
+        console.log(err);
+      });*/
+
+
+
       vm.books = [
       {
         title: 'I Could Pee on This: And Other Poems by Cats',
