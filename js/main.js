@@ -21,8 +21,41 @@
         controllerAs: 'show'
 
       })
+      .when('/:id/edit', {
+        templateUrl: 'views/form.html',
+        controller: 'EditController',
+        controllerAs: 'laCtrl'
+
+      })
       .otherwise({redirectTo: '/'})
     })
+
+    .controller('EditController', function($http, $routeParams, $location){
+      var vm = this;
+      var id = $routeParams.id;
+      var url = 'https://library-app-angular.firebaseio.com/' + id + '.json';
+      $http.get(url)
+      .success(function(data){
+        vm.newBook = data;
+
+      })
+      .error(function(err){
+        console.log(err);
+      })
+
+
+    vm.addNewBook = function(){
+      $http.put(url, vm.newBook)
+      .success(function(data){
+        $location.path('/')
+      })
+      .error(function(err){
+        console.log(err);
+      });
+    }
+  })
+
+
 
     .controller('ShowController', function($http, $routeParams){
       var vm = this;
